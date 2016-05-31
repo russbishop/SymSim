@@ -2,6 +2,15 @@
 
 Create symbolic links to CoreSimulator directories to make it easier to find them. The directories are created in a hierarchy of `<operating system>/<version>/<model>`.
 
+# Building
+
+If you have Xcode 7.3.1 installed you can build from the command line and create a link to the binary in `/usr/local/bin`:
+
+    git clone https://github.com/russbishop/SymSim.git
+    cd SymSim/source/SymSim
+    xcodebuild
+    ln build/Release/SymSim /usr/local/bin/symsim
+
 # Examples
 
 List all the iPad simulators running iOS 9.x: `symsim -p --type iPad --major 9 --minor 2`
@@ -99,10 +108,10 @@ If a simulator has never been booted it may not have an actual data directory. I
 
 # TODO
 
+* Create a binary distribution and/or add to homebrew.
 * Currently the dependencies are directly included so there are no issues finding frameworks, but they should at least be git submodules.
 * Scan the containers to find out which directories contain which apps, then add the ability to print the app bundle identifiers and/or create symbolic links to the apps as well
 * Bare or "porcelin" mode that will print just a target path or path(s) for use with other tools
-
 
 # License
 
