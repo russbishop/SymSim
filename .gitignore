@@ -1,0 +1,8 @@
+*.swp
+*.orig
+*.xccheckout
+xcuserdata
+.DS_Store
+
+Carthage/
+Pods/
